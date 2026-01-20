@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Day {
+  SEG
+  QUA
+  SEX
+}
+
+enum SessionCode {
+  A
+  B
+  C
+  D
+  DELOAD
+}
+
+model Exercise {
+  id               Int    @id
+  name             String
+  group            String?
+  movementPattern  String?
+  equipment        String?
+  primaryMuscles   String?
+  secondaryMuscles String?
+  tempoSuggested   String?
+  variationEasier  String?
+  variationHarder  String?
+  checklist        String?
+  notes            String?
+
+  planExercises  PlanExercise[]
+  setLogs        WorkoutSetLog[]
+
+  @@index([name])
+  @@index([group])
+  @@index([equipment])
+  @@index([movementPattern])
+}
+
+model Plan {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+
+  weekSettings PlanWeekSettings[]
+  exercises    PlanExercise[]
+  workoutLogs  WorkoutLog[]
+}
+
+model PlanWeekSettings {
+  id            Int    @id @default(autoincrement())
+  planId        Int
+  weekNumber    Int
+  blockFocus    String?
+  setsDefault   Int?
+  repsTargetText String?
+  rirTargetText  String?
+  restText      String?
+  tempoText     String?
+  notes         String?
+
+  plan Plan @relation(fields: [planId], references: [id], onDelete: Cascade)
+
+  @@unique([planId, weekNumber])
+}
+
+model PlanExercise {
+  id            Int         @id @default(autoincrement())
+  planId        Int
+  weekNumber    Int
+  day           Day
+  sessionCode   SessionCode
+  sessionNumber Int?
+  exerciseId    Int
+  sets          Int?
+  repsTarget    String?
+  rirTarget     String?
+  rest          String?
+  tempo         String?
+
+  plan     Plan     @relation(fields: [planId], references: [id], onDelete: Cascade)
+  exercise Exercise @relation(fields: [exerciseId], references: [id], onDelete: Restrict)
+
+  @@index([planId, weekNumber])
+  @@index([exerciseId])
+  @@unique([planId, weekNumber, day, sessionCode, exerciseId])
+}
+
+model UserSession {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+
+  workoutLogs WorkoutLog[]
+}
+
+model WorkoutLog {
+  id            String      @id @default(uuid())
+  userSessionId String
+  planId        Int
+  weekNumber    Int
+  day           Day
+  sessionCode   SessionCode
+  createdAt     DateTime    @default(now())
+  completedAt   DateTime?
+
+  userSession UserSession     @relation(fields: [userSessionId], references: [id], onDelete: Cascade)
+  plan        Plan            @relation(fields: [planId], references: [id], onDelete: Restrict)
+  setLogs     WorkoutSetLog[]
+
+  @@index([userSessionId])
+  @@index([planId, weekNumber])
+  @@unique([userSessionId, planId, weekNumber, day, sessionCode])
+}
+
+model WorkoutSetLog {
+  id          String   @id @default(uuid())
+  workoutLogId String
+  exerciseId  Int
+  setNumber   Int
+  weightKg    Decimal?
+  repsDone    Int?
+  rirActual   Int?
+  notes       String?
+  updatedAt   DateTime @updatedAt
+
+  workoutLog WorkoutLog @relation(fields: [workoutLogId], references: [id], onDelete: Cascade)
+  exercise  Exercise   @relation(fields: [exerciseId], references: [id], onDelete: Restrict)
+
+  @@index([workoutLogId])
+  @@index([exerciseId])
+  @@unique([workoutLogId, exerciseId, setNumber])
+}
+
+
