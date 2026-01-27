@@ -30,11 +30,18 @@ export async function RecentWorkoutsCard() {
     );
   }
 
-  const workouts = await prisma.workoutLog.findMany({
-    where: { userSessionId },
-    orderBy: { createdAt: "desc" },
-    take: 8,
-  });
+  let workouts = [];
+  try {
+    workouts = await prisma.workoutLog.findMany({
+      where: { userSessionId },
+      orderBy: { createdAt: "desc" },
+      take: 8,
+    });
+  } catch (error) {
+    // Se o banco não estiver configurado ou as tabelas não existirem, retorna vazio
+    console.error("Erro ao buscar treinos:", error);
+    workouts = [];
+  }
 
   const completed = workouts.filter((w) => w.completedAt != null).length;
 
