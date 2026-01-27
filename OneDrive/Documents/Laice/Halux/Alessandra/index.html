@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartilha de Fisioterapia - Pós-operatório Hálux - Alessandra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Cores Primárias - Estilo Dra. Laice Cunha */
+            --primary: #B78B4C;           /* Dourado/marrom claro - cor principal do site */
+            --primary-dark: #9A7239;     /* Versão mais escura do dourado */
+            --primary-light: #F5E6D3;    /* Dourado muito claro para backgrounds */
+            --accent: #B78B4C;            /* Mesma cor primária */
+            
+            /* Cores de Fundo - Baseadas no site */
+            --bg-primary: #F8F8F8;        /* Off-white/cream do site */
+            --bg-secondary: #FFFFFF;      /* Branco puro */
+            --bg-card: #FFFFFF;          /* Fundo de cards branco */
+            
+            /* Cores de Texto - Baseadas no site */
+            --text-primary: #212121;      /* Preto suave usado no site */
+            --text-secondary: #333333;    /* Cinza escuro para corpo */
+            --text-muted: #666666;       /* Cinza médio */
+            --text-light: #999999;       /* Cinza claro */
+            
+            /* Cores de Destaque */
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #B78B4C;
+            --whatsapp: #25D366;         /* Verde WhatsApp */
+            
+            /* Sombras */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            
+            /* Espaçamentos */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            
+            /* Bordas */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        /* Cabeçalho */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .header-title {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .header-logo {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .header-logo img {
+            max-height: 100px;
+            max-width: 300px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 768px) {
+            .header-logo img {
+                max-height: 70px;
+                max-width: 250px;
+            }
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .patient-info {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            min-width: 250px;
+        }
+
+        .patient-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.9;
+        }
+
+        .patient-info p {
+            font-size: 14px;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* Diagnóstico */
+        .diagnosis-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            border-top: 1px solid rgba(183, 139, 76, 0.1);
+        }
+
+        .diagnosis-card h2 {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .diagnosis-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Resumo do Atendimento */
+        .appointment-summary {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary);
+            border-top: 1px solid rgba(183, 139, 76, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            display: block;
+            width: 100%;
+        }
+        
+        .appointment-summary h2 {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .appointment-summary h3 {
+            color: var(--text-primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .appointment-summary p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .appointment-summary ul {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .appointment-summary li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .plan-item {
+            background: var(--primary-light);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-sm);
+            border-left: 3px solid var(--primary);
+            line-height: 1.6;
+        }
+        
+        .plan-item p {
+            margin: 0;
+        }
+        
+        .plan-item strong {
+            color: var(--primary-dark);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Seções */
+        .section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .section-header h2 {
+            color: var(--text-primary);
+            font-size: 28px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-header i {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .phase-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Cards de Exercícios */
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .exercise-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(183, 139, 76, 0.15);
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .exercise-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: var(--spacing-md);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 2px 4px rgba(183, 139, 76, 0.3);
+        }
+
+        .exercise-title {
+            color: var(--text-primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .exercise-icon {
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .exercise-description {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .exercise-description ul {
+            margin-left: var(--spacing-lg);
+            margin-top: var(--spacing-sm);
+        }
+
+        .exercise-description li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .exercise-video {
+            background: var(--bg-secondary);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            margin: var(--spacing-md) 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            border-left: 3px solid var(--primary);
+        }
+
+        .exercise-video i {
+            color: var(--primary);
+            margin-right: var(--spacing-xs);
+        }
+        
+        .exercise-video a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: var(--primary-light);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .exercise-video a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .exercise-video a i {
+            color: inherit;
+            margin: 0;
+        }
+
+        .exercise-specs {
+            background: var(--primary-light);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-sm);
+            margin-top: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            border-left: 3px solid var(--primary);
+        }
+
+        .exercise-specs-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .exercise-specs-item i {
+            color: var(--primary-dark);
+        }
+
+
+        /* Orientações */
+        .guidelines-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .guidelines-list {
+            list-style: none;
+        }
+
+        .guidelines-list li {
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .guidelines-list i {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Avisos */
+        .warnings-card {
+            background: #FFF4E6;
+            border-left: 4px solid var(--warning);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .warnings-card h3 {
+            color: var(--text-primary);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .warnings-card h3 i {
+            color: var(--warning);
+        }
+
+        .warnings-list {
+            list-style: none;
+        }
+
+        .warnings-list li {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .warnings-list li::before {
+            content: "⚠️";
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Contatos */
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--bg-card) 100%);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid rgba(183, 139, 76, 0.2);
+        }
+
+        .contact-card h2 {
+            color: var(--text-primary);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 2px;
+        }
+        
+        .contact-item strong {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-item div {
+            flex: 1;
+        }
+
+        .contact-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-item span {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Rodapé */
+        .footer {
+            background: var(--bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: var(--spacing-xl);
+        }
+
+        .footer p {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .whatsapp-button {
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            font-size: 32px;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-label {
+            background: var(--text-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            box-shadow: var(--shadow-md);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-button {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+            }
+            
+            .whatsapp-label {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            .header-title {
+                font-size: 24px;
+            }
+
+            .exercises-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 22px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .patient-info {
+                width: 100%;
+            }
+        }
+
+        /* Impressão */
+        @media print {
+            .header {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .exercise-card,
+            .guidelines-card,
+            .warnings-card,
+            .contact-card,
+            .appointment-summary {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .section {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="header-logo">
+                <img src="logo-branca.png.webp" alt="Logo Dra. Laice Cunha">
+            </div>
+            <div class="header-content">
+                <div>
+                    <h1 class="header-title">
+                        <i class="fas fa-heartbeat"></i> Cartilha de Fisioterapia
+                    </h1>
+                    <p class="header-subtitle">Exercícios Pós-operatórios - Hálux e Antepé</p>
+                </div>
+                <div class="patient-info">
+                    <h3><i class="fas fa-user-md"></i> Informações do Paciente</h3>
+                    <p><strong>Paciente:</strong> Alessandra</p>
+                    <p><strong>Data da Cirurgia:</strong> 15/12/2025</p>
+                    <p><strong>Fase:</strong> Mobilidade Ativa do Hálux</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Diagnóstico -->
+        <section class="diagnosis-card">
+            <h2>
+                <i class="fas fa-stethoscope"></i> Diagnóstico
+            </h2>
+            <p>
+                <strong>Pós-operatório de Cirurgia de Hálux (Bunion)</strong><br>
+                Esta cartilha contém exercícios específicos para a fase de mobilidade ativa do hálux, 
+                geralmente iniciada após retirada de parte do curativo e com uso de sandália rígida. 
+                Os exercícios são progressivos e devem ser realizados conforme orientação médica.
+            </p>
+        </section>
+
+        <!-- Resumo do Atendimento Clínico -->
+        <section class="appointment-summary">
+            <h2>
+                <i class="fas fa-clipboard-check"></i> Resumo do Atendimento Clínico
+            </h2>
+            <p>
+                <strong>Data da Cirurgia:</strong> 15/12/2025<br>
+                <strong>Paciente:</strong> Alessandra<br>
+                <strong>Fisioterapeuta:</strong> Vitor Vaz (CREFITO 3: 297100)
+            </p>
+            
+            <h3>Plano de Ação</h3>
+            <div class="plan-item">
+                <strong>1. Mobilização Cicatricial</strong><br>
+                Realizar mobilização da cicatriz cirúrgica por 2 a 4 minutos, 2 vezes ao dia. 
+                Este procedimento ajuda a prevenir aderências e melhora a qualidade do tecido cicatricial.
+            </div>
+            <div class="plan-item">
+                <strong>2. Mobilização Ativa do Hálux</strong><br>
+                Iniciar exercícios de mobilização passiva e ativa do hálux conforme tolerância, 
+                seguindo a progressão estabelecida na cartilha.
+            </div>
+            <div class="plan-item">
+                <strong>3. Fortalecimento Progressivo</strong><br>
+                Iniciar exercícios de fortalecimento dos músculos intrínsecos do pé e estabilização 
+                conforme evolução do quadro.
+            </div>
+            <div class="plan-item">
+                <strong>4. Orientações Gerais</strong><br>
+                Manter uso da sandália rígida conforme orientação médica. Realizar exercícios com 
+                regularidade e respeitando os limites de dor. Em caso de dúvidas, entrar em contato.
+            </div>
+        </section>
+
+        <!-- Fase 1: Mobilização Ativa -->
+        <section class="section">
+            <div class="phase-badge">
+                <i class="fas fa-play-circle"></i> FASE 1: Mobilização Ativa do Hálux
+            </div>
+            <div class="section-header">
+                <i class="fas fa-hand-paper"></i>
+                <h2>Mobilização e Alongamento</h2>
+            </div>
+            <div class="exercises-grid">
+                <!-- Exercício 1: Mobilização Cicatricial -->
+                <div class="exercise-card">
+                    <div class="exercise-number">1</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-hand-holding-medical exercise-icon"></i>
+                        Mobilização Cicatricial
+                    </h3>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício é fundamental para prevenir aderências e melhorar a qualidade da cicatriz após a cirurgia. Siga os passos abaixo:</p>
+                        <ul>
+                            <li>Lave bem as mãos antes de iniciar.</li>
+                            <li>Com os dedos indicador e polegar, segure suavemente a pele ao redor da cicatriz.</li>
+                            <li>Faça movimentos circulares suaves sobre a cicatriz, aplicando uma pressão leve.</li>
+                            <li>Mova a pele em diferentes direções: para cima, para baixo, para os lados e em círculos.</li>
+                            <li>Realize este procedimento por 2 a 4 minutos.</li>
+                            <li>Faça este exercício 2 vezes ao dia, preferencialmente após o banho quando a pele está mais macia.</li>
+                        </ul>
+                        <p><strong>Importante:</strong> A pressão deve ser suave, não deve causar dor intensa. Se a cicatriz ainda estiver com pontos ou muito sensível, aguarde a liberação médica ou reduza a intensidade do movimento.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-clock"></i>
+                            <span>2-4 minutos</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>2x/dia</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-hand-holding-medical"></i>
+                            <span>Mobilização Cicatricial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercício 2: Mobilização do Hálux -->
+                <div class="exercise-card">
+                    <div class="exercise-number">2</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-hand-holding exercise-icon"></i>
+                        Mobilização do Hálux (Manual)
+                    </h3>
+                    <div class="exercise-video">
+                        <a href="https://www.youtube.com/watch?v=1QhIqxOhq2w&pp=ygUuRXhlcmNpc2VzIGZvciBCaWcgVG9lIEZvbGxvd2luZyBCdW5pb24gU3VyZ2VyeQ%3D%3D" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Assistir no YouTube
+                        </a>
+                    </div>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício ajuda a recuperar a mobilidade do seu dedão após a cirurgia. Siga os passos abaixo:</p>
+                        <ul>
+                            <li>Sente-se confortavelmente em uma cadeira.</li>
+                            <li>Com a mão oposta, segure gentilmente o dedão (hálux) do pé operado.</li>
+                            <li>Puxe o dedão suavemente para cima (direção do teto) até sentir um leve alongamento, mas sem dor. Mantenha essa posição por 30 a 60 segundos.</li>
+                            <li>Depois, empurre o dedão suavemente para baixo (direção do chão), também por 30 a 60 segundos.</li>
+                            <li>Repita esse movimento de alternar entre cima e baixo por 5 a 6 minutos no total.</li>
+                            <li>Faça este exercício 2 vezes por dia.</li>
+                        </ul>
+                        <p><strong>Importante:</strong> Não force! O movimento deve ser suave e controlado. Se sentir dor, pare e consulte seu médico.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5-6 minutos</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>2x/dia</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>Mobilização Passiva</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercício 3 -->
+                <div class="exercise-card">
+                    <div class="exercise-number">3</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-compress-arrows-alt exercise-icon"></i>
+                        Alongamento/Mobilização do Hálux e Antepé
+                    </h3>
+                    <div class="exercise-video">
+                        <a href="https://www.youtube.com/shorts/f0pqDDB72xw" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Assistir no YouTube
+                        </a>
+                    </div>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício trabalha a flexibilidade e mobilidade do dedão e da parte da frente do pé. Assista ao vídeo para ver as diferentes formas de fazer este exercício.</p>
+                        <ul>
+                            <li>Assista ao vídeo de referência para entender as variações de mobilização.</li>
+                            <li>Escolha a variação que você consegue fazer com conforto.</li>
+                            <li>Realize os movimentos de forma lenta e controlada.</li>
+                            <li>Mantenha cada posição de alongamento por 20 a 30 segundos.</li>
+                            <li>Repita conforme sua tolerância, sem forçar.</li>
+                        </ul>
+                        <p><strong>Dica:</strong> Comece com movimentos mais suaves e vá aumentando a amplitude conforme sua mobilidade melhora.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Conforme orientação</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercício 4 -->
+                <div class="exercise-card">
+                    <div class="exercise-number">4</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-socks exercise-icon"></i>
+                        Fortalecimento dos Músculos Intrínsecos do Pé – "Towel Scrunch"
+                    </h3>
+                    <div class="exercise-video">
+                        <a href="https://www.youtube.com/shorts/RoEmHev3KZ8" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Assistir no YouTube
+                        </a>
+                    </div>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício fortalece os pequenos músculos dentro do pé, importantes para a estabilidade. Siga os passos:</p>
+                        <ul>
+                            <li>Sente-se em uma cadeira com os pés descalços.</li>
+                            <li>Coloque uma toalha pequena no chão, na frente do pé operado.</li>
+                            <li>Posicione o pé sobre a toalha, com os dedos na borda mais distante.</li>
+                            <li>Use apenas os dedos do pé para "amassar" e puxar a toalha em direção ao seu corpo, como se estivesse enrolando a toalha com os dedos.</li>
+                            <li>Faça 3 a 5 repetições completas (puxar toda a toalha).</li>
+                            <li>Descanse um pouco e repita mais 1 a 2 séries.</li>
+                            <li>Faça este exercício 1 a 2 vezes por dia.</li>
+                        </ul>
+                        <p><strong>Dica:</strong> Se a toalha for muito difícil no início, comece com uma toalha menor ou um lenço.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>3-5 repetições</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>1-2 séries</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>1-2x/dia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fase 2: Fortalecimento -->
+        <section class="section">
+            <div class="phase-badge">
+                <i class="fas fa-dumbbell"></i> FASE 2: Fortalecimento
+            </div>
+            <div class="section-header">
+                <i class="fas fa-fire"></i>
+                <h2>Fortalecimento e Estabilização</h2>
+            </div>
+            <div class="exercises-grid">
+                <!-- Exercício 5 -->
+                <div class="exercise-card">
+                    <div class="exercise-number">5</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-fingerprint exercise-icon"></i>
+                        Flexão e Extensão Ativa do Hálux
+                    </h3>
+                    <div class="exercise-video">
+                        <a href="https://www.youtube.com/watch?v=4Bs7aYMdPCc" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Assistir no YouTube
+                        </a>
+                    </div>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício trabalha o controle e força do dedão de forma independente dos outros dedos. Siga os passos:</p>
+                        <ul>
+                            <li>Sente-se ou fique em pé com os pés descalços no chão.</li>
+                            <li>Primeiro movimento: levante apenas o dedão (hálux), mantendo os outros 4 dedos pressionados no chão.</li>
+                            <li>Segure por 2 segundos e abaixe o dedão.</li>
+                            <li>Segundo movimento: agora mantenha o dedão no chão e levante os outros 4 dedos juntos.</li>
+                            <li>Segure por 2 segundos e abaixe.</li>
+                            <li>Faça 10 a 15 repetições de cada movimento (alternando entre levantar o dedão e levantar os outros dedos).</li>
+                            <li>Descanse 30 segundos e repita mais 2 a 3 séries.</li>
+                        </ul>
+                        <p><strong>Dica:</strong> No início pode ser difícil separar os movimentos. Continue tentando, pois isso melhora com a prática.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>10-15 repetições</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>2-3 séries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercício 6 -->
+                <div class="exercise-card">
+                    <div class="exercise-number">6</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-arrow-up exercise-icon"></i>
+                        Elevação de Calcanhar (Heel Raises)
+                    </h3>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício fortalece a panturrilha e melhora a estabilidade do tornozelo. Siga os passos:</p>
+                        <ul>
+                            <li>Fique em pé, segurando-se em uma cadeira ou parede para ter apoio e equilíbrio.</li>
+                            <li>Com os dois pés apoiados no chão, suba devagar na ponta dos pés, como se estivesse tentando ficar mais alto.</li>
+                            <li>Mantenha essa posição na ponta dos pés por 3 segundos.</li>
+                            <li>Desça lentamente até os calcanhares tocarem o chão novamente.</li>
+                            <li>Faça 10 a 15 repetições.</li>
+                            <li>Descanse 30 segundos e repita mais 2 a 3 séries.</li>
+                            <li>Conforme você melhora, pode tentar fazer com mais peso ou segurando menos no apoio.</li>
+                        </ul>
+                        <p><strong>Importante:</strong> Faça o movimento devagar e controlado. Se sentir dor no pé operado, reduza a amplitude do movimento.</p>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>10-15 repetições</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>2-3 séries</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Segurar 3s</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercício 7 -->
+                <div class="exercise-card">
+                    <div class="exercise-number">7</div>
+                    <h3 class="exercise-title">
+                        <i class="fas fa-running exercise-icon"></i>
+                        Estabilizadores de Quadril – Abdutores
+                    </h3>
+                    <div class="exercise-description">
+                        <p><strong>Como fazer:</strong></p>
+                        <p>Este exercício fortalece os músculos do quadril e glúteos, o que ajuda a melhorar o alinhamento do corpo e reduzir a sobrecarga no pé. Siga os passos:</p>
+                        <ul>
+                            <li>Deite-se de lado sobre um colchonete ou cama, com a perna do lado que está deitado dobrada para dar estabilidade.</li>
+                            <li>A perna de cima (a que vai fazer o exercício) deve estar esticada e alinhada com o corpo.</li>
+                            <li>Mantenha o tronco reto e não deixe o corpo rolar para frente ou para trás.</li>
+                            <li>Levante a perna de cima devagar, mantendo-a esticada, até sentir o trabalho na lateral do quadril.</li>
+                            <li>Mantenha a perna levantada por 2 segundos.</li>
+                            <li>Desça a perna lentamente até quase tocar a perna de baixo, mas sem relaxar completamente.</li>
+                            <li>Faça 15 repetições.</li>
+                            <li>Descanse 30 segundos e repita mais 2 séries (total de 3 séries de 15 repetições).</li>
+                            <li>Depois, vire para o outro lado e faça o mesmo com a outra perna.</li>
+                        </ul>
+                        <p><strong>Dica:</strong> Mantenha o pé apontado para frente (não gire o pé para cima) durante todo o movimento. Se sentir dor no quadril, reduza a altura da elevação.</p>
+                    </div>
+                    <div class="exercise-video">
+                        <a href="https://www.youtube.com/results?search_query=Side+Lying+Hip+Abduction" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i> Assistir no YouTube
+                        </a>
+                    </div>
+                    <div class="exercise-specs">
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-redo"></i>
+                            <span>15 repetições</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>3 séries</span>
+                        </div>
+                        <div class="exercise-specs-item">
+                            <i class="fas fa-bed"></i>
+                            <span>Decúbito lateral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Avisos Importantes -->
+        <section class="warnings-card">
+            <h3>
+                <i class="fas fa-exclamation-triangle"></i>
+                Avisos Importantes para o Paciente
+            </h3>
+            <ul class="warnings-list">
+                <li>
+                    <strong>Em caso de aumento súbito de dor, calor, vermelhidão ou abertura de pontos:</strong> 
+                    Interrompa os exercícios imediatamente e comunique seu cirurgião.
+                </li>
+                <li>
+                    <strong>Não tente forçar o hálux a posições extremas:</strong> O objetivo é ganho gradual de 
+                    mobilidade e força, não "voltar tudo de uma vez".
+                </li>
+                <li>
+                    <strong>Exercícios de quadril podem ser feitos bilateralmente:</strong> Pois são realizados deitado 
+                    e não sobrecarregam diretamente o pé.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Orientações Gerais -->
+        <section class="guidelines-card">
+            <div class="section-header">
+                <i class="fas fa-clipboard-list"></i>
+                <h2>Orientações Gerais</h2>
+            </div>
+            <ul class="guidelines-list">
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Progressão Gradual:</strong> Realize os exercícios conforme sua tolerância, 
+                        aumentando gradualmente a intensidade e duração.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Frequência:</strong> Siga as orientações de frequência indicadas para cada exercício. 
+                        Não ultrapasse as séries e repetições recomendadas sem orientação médica.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Dor:</strong> É normal sentir leve desconforto durante os exercícios, mas não deve haver 
+                        dor intensa. Se a dor aumentar, pare e consulte seu médico.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Consistência:</strong> A regularidade na realização dos exercícios é fundamental para 
+                        uma recuperação adequada.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <strong>Equipamentos:</strong> Use roupas confortáveis e tenha uma toalha disponível para os 
+                        exercícios que a requerem.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contatos -->
+        <section class="contact-card">
+            <h2>
+                <i class="fas fa-phone-alt"></i> Contatos e Informações
+            </h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-user-md"></i>
+                    <div>
+                        <strong>Médica Responsável</strong>
+                        <span>Dra. Laice Cunha</span>
+                        <span style="display: block; margin-top: 4px; font-size: 13px; color: var(--text-muted);">
+                            Cirurgiã de Pé e Tornozelo
+                        </span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-user-nurse"></i>
+                    <div>
+                        <strong>Fisioterapeuta</strong>
+                        <span>Vitor Vaz</span>
+                        <span style="display: block; margin-top: 4px; font-size: 13px; color: var(--text-muted);">
+                            CREFITO 3: 297100
+                        </span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Telefone</strong>
+                        <span>(11) 9 7598-0879</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>E-mail</strong>
+                        <span>contato@dralaicecunha.com.br</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Endereço</strong>
+                        <span>Av. Engenheiro Luís Carlos Berrini, 1748<br>
+                        5° Andar - Cj. 508 - Brooklin<br>
+                        São Paulo - SP, 04571-000</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <strong>Site</strong>
+                        <span>www.dralaicecunha.com.br</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p><strong>Cartilha de Fisioterapia - Pós-operatório Hálux</strong></p>
+            <p>Este material é de uso exclusivo do paciente e deve ser seguido conforme orientação médica e fisioterapêutica.</p>
+            <p style="margin-top: 12px;">
+                <strong>Dra. Laice Cunha</strong> - Cirurgiã de Pé e Tornozelo<br>
+                <strong>Vitor Vaz</strong> - Fisioterapeuta (CREFITO 3: 297100)
+            </p>
+            <p style="margin-top: 12px; color: var(--text-muted);">
+                Em caso de dúvidas, entre em contato com sua médica ou fisioterapeuta.
+            </p>
+            <p style="margin-top: 16px; color: var(--text-light); font-size: 12px;">
+                Gerado em <span id="footer-date"></span>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Atualizar data atual
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('pt-BR', { 
+            day: '2-digit', 
+            month: '2-digit', 
+            year: 'numeric' 
+        });
+        
+        const dateElement = document.getElementById('current-date');
+        const footerDateElement = document.getElementById('footer-date');
+        
+        if (dateElement) {
+            dateElement.textContent = dateStr;
+        }
+        
+        if (footerDateElement) {
+            footerDateElement.textContent = dateStr;
+        }
+    </script>
+    
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5511983437846?text=Olá!%20Gostaria%20de%20falar%20com%20o%20fisioterapeuta" 
+           target="_blank" 
+           class="whatsapp-button" 
+           aria-label="Falar com fisioterapeuta no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span class="whatsapp-label">Falar com fisioterapeuta</span>
+    </div>
+</body>
+</html>
