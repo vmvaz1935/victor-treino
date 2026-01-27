@@ -38,16 +38,33 @@ O Vercel detecta automaticamente projetos Next.js, mas certifique-se de:
 
 ### 5. Executar Migrações do Banco de Dados
 
-Após o primeiro deploy, você precisará executar as migrações:
+**IMPORTANTE**: O script `vercel-build` foi configurado para executar as migrações automaticamente durante o build. No entanto, se você ainda encontrar erro 404, execute as migrações manualmente:
+
+#### Opção 1: Via Vercel CLI (Recomendado)
 
 ```bash
-# Via Vercel CLI (recomendado)
+# Baixar variáveis de ambiente
 vercel env pull .env.local
+
+# Executar migrações
 pnpm db:migrate:deploy
 
-# Ou via script no Vercel Dashboard
-# Adicione um script de build que execute as migrações
+# Ou usar db push (mais simples, mas não cria histórico de migrações)
+pnpm db:push
 ```
+
+#### Opção 2: Via Dashboard do Vercel
+
+1. Acesse: https://vercel.com/vitor-s-projects-cf640db2/victor-treino/stores
+2. Clique no banco de dados "joao-dias"
+3. Clique em "Open in Neon" para acessar o console SQL
+4. Execute o SQL do schema manualmente ou use o Prisma Studio
+
+#### Opção 3: Configurar Build Command no Vercel
+
+1. Acesse: Settings → Build and Deployment
+2. Altere **Build Command** para: `pnpm vercel-build`
+3. Salve e faça um novo deploy
 
 ### 6. Configurar Script de Build (Opcional)
 
