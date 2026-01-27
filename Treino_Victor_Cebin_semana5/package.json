@@ -10,6 +10,7 @@
     "postinstall": "node scripts/prisma-run.mjs generate",
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "node scripts/prisma-run.mjs db push --accept-data-loss || true && next build",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier . --write",
