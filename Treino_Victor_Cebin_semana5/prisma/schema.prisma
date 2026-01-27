@@ -109,6 +109,7 @@ model UserSession {
   createdAt DateTime @default(now())
 
   workoutLogs WorkoutLog[]
+  assessments Assessment[]
 }
 
 model WorkoutLog {
@@ -147,6 +148,52 @@ model WorkoutSetLog {
   @@index([workoutLogId])
   @@index([exerciseId])
   @@unique([workoutLogId, exerciseId, setNumber])
+}
+
+model Diagnosis {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  assessmentUnits AssessmentUnit[]
+
+  @@index([name])
+}
+
+model Assessment {
+  id            String   @id @default(uuid())
+  userSessionId String
+  assessmentDate DateTime @default(now())
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userSession     UserSession      @relation(fields: [userSessionId], references: [id], onDelete: Cascade)
+  assessmentUnits AssessmentUnit[]
+
+  @@index([userSessionId])
+  @@index([assessmentDate])
+}
+
+model AssessmentUnit {
+  id           String   @id @default(uuid())
+  assessmentId String
+  diagnosisId  Int
+  unit         String   // Ex: "ombro direito", "joelho esquerdo", "coluna lombar"
+  value        String?  // Valor da avaliação (ex: "30°", "5/5", "dor leve")
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  assessment Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  diagnosis  Diagnosis  @relation(fields: [diagnosisId], references: [id], onDelete: Restrict)
+
+  @@index([assessmentId])
+  @@index([diagnosisId])
+  @@index([unit])
+  @@unique([assessmentId, diagnosisId, unit])
 }
 
 
